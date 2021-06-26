@@ -174,5 +174,10 @@ docker-machine ls        # List machine
 docker-machine create --driver virtualbox worker1
 
 
+#Connect to docker machines
+
+docker-machine ssh manager
+docker-machine ssh worker1
+docker-machine ssh worker2
 
 ```  
