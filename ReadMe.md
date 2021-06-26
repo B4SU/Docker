@@ -1,3 +1,7 @@
+
+
+
+
 ## Docker Image
 
 ### Image creation using dockerfile
@@ -133,3 +137,22 @@ services:
 
 
 ```
+
+
+## Docker Network
+
+
+## Docker Swarm
+Swarm is a group of machines are running docker and part of a cluster.
+Docker Swarm is a tool for container orchestration.
+
+Pre-requisites
+1. Docker 1.13 or higher
+2. Docker Machine download link
+    https://docs.docker.com/machine/install-machine/#installing-machine-directly
+    https://docs.docker.com/get-started/swarm-deploy/
+
+
+    ![alt text][logo]
+
+    [logo]: https://docs.docker.com/engine/swarm/images/services-diagram.png "Logo Title Text 2"
