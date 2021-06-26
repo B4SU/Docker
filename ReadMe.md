@@ -2,11 +2,9 @@
 
 ### Image creation using dockerfile
 
-```
+```sh
 
-#  Create docker image from existing container 'UB1'
-
-docker commit UB1 myubuntu:V1
+docker commit UB1 myubuntu:V1  #  Create docker image from existing container 'UB1'
 
 ```
 
@@ -33,8 +31,8 @@ VOLUME /CENTOS_DATA
 ```
 
 ```shell
-# Build image
-docker build -t mycentos:V1 .
+
+docker build -t mycentos:V1 .   # Build image using the dockerfile
 
 ```
 
