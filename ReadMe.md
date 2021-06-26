@@ -161,14 +161,17 @@ Pre-requisites
 Create Docker machines (to act as nodes for Docker Swarm). Create one machine as manager and others as workers
 
 ```docker
-    #Creating manager node, this command is for Mac having dependency on VirtualBox.
-    #For Windows replace virtualbox with hyperv.
-    docker-machine create --driver virtualbox manager
+#Creating manager node, this command is for Mac having dependency on VirtualBox.
+#For Windows replace virtualbox with hyperv.
 
-    docker-machine ls        # List machine
+docker-machine create --driver virtualbox manager
 
-    #Creating worker node
-    docker-machine create --driver virtualbox worker1
+docker-machine ls        # List machine
+
+
+#Creating worker node
+
+docker-machine create --driver virtualbox worker1
 
 
 
