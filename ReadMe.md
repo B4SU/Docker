@@ -156,3 +156,15 @@ Pre-requisites
     ![alt text][logo]
 
     [logo]: https://docs.docker.com/engine/swarm/images/services-diagram.png "Logo Title Text 2"
+
+
+Create Docker machines (to act as nodes for Docker Swarm). Create one machine as manager and others as workers
+
+```docker
+    docker-machine create --driver virtualbox manager1    # Mac, for Windows replace virtualbox with hyperv
+
+    docker-machine ls        # List machine
+
+
+
+```  
