@@ -45,3 +45,37 @@ docker run --name MC1 -itd mycentos:V1    # Create container using newly created
 Tool for defining and running multi container docker applications.
 - Download Link https://docs.docker.com/compose/install/
 - Already installed in Mac & Windows along with docker apps
+
+
+```sh
+chmod +x /usr/local/bin/docker-compose #Apply executable permission to the binary
+vi docker-compose.yml #Create docker-compose file
+
+```
+
+```docker-compose
+version: '3'
+
+services:
+ mydb:
+  image: mysql:5
+  environment:
+   MYSQL_ROOT_PASSWORD: psswd
+
+ mywordpress:
+  image: wordpress
+  ports:
+   - 9999:80
+  links:
+   - mydb:mysql
+
+```
+
+```docker-compose
+docker-compose config #Check validity of the file
+
+docker-compose up -d #Run docker-compose.yml file in detached mode (-d)
+
+docker-compose down #Bring down the applications
+
+```

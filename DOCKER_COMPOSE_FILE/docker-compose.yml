@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+ mydb:
+  image: mysql:5
+  environment:
+   MYSQL_ROOT_PASSWORD: psswd
+
+ mywordpress:
+  image: wordpress
+  ports:
+   - 9999:80
+  links:
+   - mydb:mysql
