@@ -37,5 +37,5 @@ docker build -t mycentos:V1 .   # Build image using the dockerfile
 ```
 
 ```sh
-docker run --name MC1 -itd mycentos:V1    # Create container using new image
+docker run --name MC1 -itd mycentos:V1    # Create container using newly created image - mycentos:V1
 ```
