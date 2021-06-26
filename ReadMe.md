@@ -1,7 +1,17 @@
 # Docker Image
+
 ### Image creation using dockerfile
 
+```
 
+#  Create docker image from existing container 'UB1'
+
+docker commit UB1 myubuntu:V1
+
+```
+
+
+### Image creation using dockerfile
 
 ```shell
 #Create dockerfile
