@@ -3,16 +3,16 @@ Docker Image
 
 Create dockerfile
 
-'''shell
+```shell
 
 touch dockerfile
 vim dockerfile
 
-'''
+```
 
 Contents
 
-'''dockerfile
+```dockerfile
 
 FROM centos
 MAINTAINER B4SU
@@ -20,10 +20,10 @@ RUN yum update -y
 RUN yum install git tree -y
 VOLUME /CENTOS_DATA
 
-'''
+```
 
-'''shell
+```shell
 
 docker build -t mycentos:V1 .
 
-'''
+```
