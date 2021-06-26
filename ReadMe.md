@@ -174,10 +174,34 @@ docker-machine ls        # List machine
 docker-machine create --driver virtualbox worker1
 
 
-#Connect to docker machines
+#Connect to docker machines via ssh
 
 docker-machine ssh manager
 docker-machine ssh worker1
 docker-machine ssh worker2
+
+
+#Obtain IP Address of manager
+docker-machine IP manager
+
+
+
+#Initialize Docker swarm by executing this command in manager node. In this case manager ip address is 192.168.99.100
+#This will provide a command to add worked in to this swarm
+
+docker swarm init --advertise-addr 192.168.99.100
+
+
+#Command to add worked or more manager can be obtained by running these commands
+
+docker swarm join-token manager
+docker swarm join-token worker
+
+
+
+
+
+
+
 
 ```  
