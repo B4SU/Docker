@@ -3,7 +3,7 @@ Docker Image
 
 Create dockerfile
 
-'''Shell
+'''shell
 
 touch dockerfile
 vim dockerfile
@@ -11,7 +11,8 @@ vim dockerfile
 '''
 
 Contents
-'''
+
+'''dockerfile
 
 FROM centos
 MAINTAINER B4SU
@@ -21,6 +22,8 @@ VOLUME /CENTOS_DATA
 
 '''
 
-'''Shell
+'''shell
+
 docker build -t mycentos:V1 .
+
 '''
