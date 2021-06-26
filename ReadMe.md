@@ -1,18 +1,18 @@
-Docker Image
+#Docker Image
 ### Image creation using dockerfile
 
-Create dockerfile
+
 
 ```shell
+#Create dockerfile
 
 touch dockerfile
 vim dockerfile
 
 ```
 
-Contents
-
 ```dockerfile
+# Contents of dockerfile
 
 FROM centos
 MAINTAINER B4SU
