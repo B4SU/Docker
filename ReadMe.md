@@ -54,6 +54,7 @@ vi docker-compose.yml #Create docker-compose file
 ```
 
 ```docker-compose
+# Docker Compose file sample
 version: '3'
 
 services:
@@ -77,5 +78,58 @@ docker-compose config #Check validity of the file
 docker-compose up -d #Run docker-compose.yml file in detached mode (-d)
 
 docker-compose down #Bring down the applications
+
+```
+
+```docker-compose
+
+# Docker compose file to setup LAMP environment
+
+version: '3'
+
+services:
+ mydb:
+  image: mysql
+  environment:
+   MYSQL_ROOT_PASSWORD: passwd
+
+ apache:
+  image: httpd
+  ports:
+   - 9090:80
+  links:
+   - mydb:mysql
+
+ php:
+  image: php:7.2-apache
+  links:
+   - mydb:mysql
+   - apache:httpd
+
+
+# Docker compose file to setup CI-CD environment
+
+version: '3'
+
+services:
+ jenkinsserver:
+  image: jenkins
+  ports:
+   - 5050:8080
+
+ qaserver:
+  image: tomcat
+  ports:
+   - 6060:8080
+  links:
+   - jenkinsserver:jenkins
+
+ prodserver:
+  image: tomcat
+  ports:
+   - 7070:8080
+  links:
+   - jenkinsserver:jenkins
+
 
 ```
