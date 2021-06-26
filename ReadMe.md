@@ -4,7 +4,7 @@
 
 ```sh
 
-docker commit UB1 myubuntu:V1  #  Create docker image from existing container 'UB1'
+docker commit UB1 myubuntu:V1       #  Create docker image from existing container 'UB1'
 
 ```
 
@@ -32,7 +32,7 @@ VOLUME /CENTOS_DATA
 
 ```shell
 
-docker build -t mycentos:V1 .   # Build image using the dockerfile
+docker build -t mycentos:V1 .         # Build image using the dockerfile
 
 ```
 
@@ -73,11 +73,11 @@ services:
 ```
 
 ```docker-compose
-docker-compose config #Check validity of the file
+docker-compose config     # Check validity of the file
 
-docker-compose up -d #Run docker-compose.yml file in detached mode (-d)
+docker-compose up -d      # Run docker-compose.yml file in detached mode (-d)
 
-docker-compose down #Bring down the applications
+docker-compose down       # Bring down the applications
 
 ```
 
