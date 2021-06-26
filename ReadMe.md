@@ -1,4 +1,4 @@
-# Docker Image
+## Docker Image
 
 ### Image creation using dockerfile
 
@@ -39,3 +39,9 @@ docker build -t mycentos:V1 .   # Build image using the dockerfile
 ```sh
 docker run --name MC1 -itd mycentos:V1    # Create container using newly created image - mycentos:V1
 ```
+
+
+## Docker Compose
+Tool for defining and running multi container docker applications.
+- Download Link https://docs.docker.com/compose/install/
+- Already installed in Mac & Windows along with docker apps
