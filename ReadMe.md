@@ -54,7 +54,7 @@ vi docker-compose.yml #Create docker-compose file
 ```
 
 ```docker-compose
-# Docker Compose file sample
+#Docker compose sample file
 version: '3'
 
 services:
