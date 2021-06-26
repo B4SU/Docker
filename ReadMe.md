@@ -185,21 +185,27 @@ docker-machine ssh worker2
 docker-machine IP manager
 
 
+#Manager Node
+  #Initialize Docker swarm by executing this command in manager node. In this case manager ip address is 192.168.99.100
+  #This will provide a command to add worked in to this swarm
 
-#Initialize Docker swarm by executing this command in manager node. In this case manager ip address is 192.168.99.100
-#This will provide a command to add worked in to this swarm
-
-docker swarm init --advertise-addr 192.168.99.100
-
-
-#Command to add worked or more manager can be obtained by running these commands
-
-docker swarm join-token manager
-docker swarm join-token worker
+  docker swarm init --advertise-addr 192.168.99.100
 
 
 
+  #Command to add worker or manager in to the swarm can be obtained by running these commands on manager node.
 
+
+  docker swarm join-token manager
+  docker swarm join-token worker
+  docker node ls        # List available nodes
+
+
+#Worker1
+  #Run command to join this node as worker
+
+#Worker2
+  #Run command to join this node as worker
 
 
 
