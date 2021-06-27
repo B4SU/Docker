@@ -200,12 +200,20 @@ docker-machine IP manager
   docker swarm join-token worker
   docker node ls        # List available nodes
 
+  #Other docker commands
+  docker info
+  docker swarm
 
 #Worker1
   #Run command to join this node as worker
 
 #Worker2
   #Run command to join this node as worker
+
+
+#Remove node out of Swarm
+docker swarm leave
+
 
 
 
