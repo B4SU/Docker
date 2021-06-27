@@ -204,18 +204,47 @@ docker-machine IP manager
   docker info
   docker swarm
 
-#Worker1
+#Worker1 Node
   #Run command to join this node as worker
 
-#Worker2
+#Worker2 Node
   #Run command to join this node as worker
 
 
 #Remove node out of Swarm
 docker swarm leave
 
-
-
-
-
 ```  
+
+```docker
+#Run Container in Docker Swarm
+#Manager node
+docker service create --replicas 3 -p 80:80 --name myweb nginx
+
+#Update Service
+docker service update --image nginx:1.14.0 myweb
+
+
+#List service and node information
+docker service ls
+docker service ps myweb
+
+#Scale service up and down
+docker service scale myweb=4
+
+
+#Inspect docker nodes
+docker node inspect <nodename>
+
+
+#Shutdown specific node
+docker node update --availability drain worker1
+
+#Remove service
+docker service rm myweb
+
+
+
+
+
+```
