@@ -141,10 +141,38 @@ services:
 
 ## Docker Network
 
+docker network
+
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+
+  Three types of network available in docker
+    1. Bridge
+    2. Host
+    3. None
+  Bridge is the default network where containers are attached. Containers can be attached to other network using this command.
+  ```
+  docker run ubuntu --network=none
+  docker run ubuntu --network=host
+  ```
+
+Overlay Network
+  It is an internal hybrid network which can be created for Docker swarm.
+  ```
+  docker network create --driver overlay --subnet 10.0.9.0/24 my-Overlay
+  docker service create --replicas 2 --network my-Overlay nginx           
+  ```
+
 
 ## Docker Swarm
-Swarm is a group of machines are running docker and part of a cluster.
-Docker Swarm is a tool for container orchestration.
+Swarm is a group of machines that are running docker and part of a cluster. Docker Swarm is a tool for container orchestration.
 
 Pre-requisites
 1. Docker 1.13 or higher
