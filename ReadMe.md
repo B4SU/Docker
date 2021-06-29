@@ -277,9 +277,19 @@ services:
   image:  nginx
   ports:
    - "8080:80"
+  deploy:
+   replicas: 2   
 ```
 
 ```sh
 #ManagerNode
-docker stack deploy --compose-file docker-file.yml mynginx    # Command to deploy yml file
+docker stack deploy --compose-file docker-file.yml mynginx    # Command to deploy dockerfile
+```
+
+
+```sh
+docker stack ls                   # List running services
+docker stack ps mynginx           # List tasks in the stack
+docker stack services mynginx     # List services in the stack
+docker stack rm mynginx           # Remove stack
 ```
