@@ -141,13 +141,13 @@ services:
 
 ## Docker Network
 
-Command to manage networks
+##### Command to manage networks
 ```sh
 docker network <command>
 ```
 
 
-Child commands
+##### Child commands
 
 |Command    | Description                                             |
 |-----------|---------------------------------------------------------|
