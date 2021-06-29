@@ -143,7 +143,7 @@ services:
 
 ##### Command to manage networks
 ```sh
-docker network <command>
+docker network
 ```
 
 
@@ -167,7 +167,8 @@ docker network <command>
 |None   |
 
   Bridge is the default network where containers are attached. Containers can be attached to other network using this command.
-  ```
+
+  ```sh
   docker run ubuntu --network=none
   docker run ubuntu --network=host
   ```
