@@ -264,3 +264,22 @@ docker-machine ssh manager  # Connect to docker machines via ssh
 
 
 ##### Docker Swarm using dockerfile
+
+
+```yml
+# docker-file.yml
+# Simple dockerfile to deploy nginx server
+version: '3'
+
+services:
+
+ myweb:
+  image:  nginx
+  ports:
+   - "8080:80"
+```
+
+```sh
+#ManagerNode
+docker stack deploy --compose-file docker-file.yml mynginx    # Command to deploy yml file
+```
