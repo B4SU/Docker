@@ -182,6 +182,8 @@ Overlay Network
 
 
 ## Docker Swarm
+
+##### Overview
 Swarm is a group of machines that are running docker and part of a cluster. Docker Swarm is a tool for container orchestration.
 
 Pre-requisites
@@ -254,10 +256,12 @@ docker swarm leave
 
 ```  
 
+##### Run Service in Docker Swarm
+
 ```docker
-#Run Container in Docker Swarm
 #Manager node
 docker service create --replicas 3 -p 80:80 --name myweb nginx
+
 
 #Update Service
 docker service update --image nginx:1.14.0 myweb
@@ -266,6 +270,7 @@ docker service update --image nginx:1.14.0 myweb
 #List service and node information
 docker service ls
 docker service ps myweb
+
 
 #Scale service up and down
 docker service scale myweb=4
@@ -281,8 +286,7 @@ docker node update --availability drain worker1
 #Remove service
 docker service rm myweb
 
-
-
-
-
 ```
+
+
+#####
