@@ -145,8 +145,11 @@ Command to manage networks
 ```sh
 docker network <command>
 ```
+
+
 Child commands
 
+|Command    | Description                                             |
 |-----------|---------------------------------------------------------|
 |connect    | Connect a container to a network                        |
 |create     | Create a network                                        |
