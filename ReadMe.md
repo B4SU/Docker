@@ -162,6 +162,7 @@ docker network
 
   Three types of network available in docker
 
+|-------|-------------------------------------------------------------------------------------------------|
 |Bridge | Private internal network created by docker, by default containers are attached to this network. |
 |Host   | Host network itself, doesn't offer isolation                                                    |
 |None   | Null                                                                                            |
