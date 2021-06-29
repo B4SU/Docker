@@ -4,7 +4,7 @@
 
 ## Docker Image
 
-### Image creation using dockerfile
+#### Image creation using dockerfile
 
 ```sh
 
@@ -13,7 +13,7 @@ docker commit UB1 myubuntu:V1       #  Create docker image from existing contain
 ```
 
 
-### Image creation using dockerfile
+#### Image creation using dockerfile
 
 ```shell
 #Create dockerfile
@@ -167,7 +167,7 @@ Overlay Network
   It is an internal hybrid network which can be created for Docker swarm.
   ```
   docker network create --driver overlay --subnet 10.0.9.0/24 my-Overlay
-  docker service create --replicas 2 --network my-Overlay nginx           
+  docker service create --replicas 2 --network my-Overlay nginx
   ```
 
 
