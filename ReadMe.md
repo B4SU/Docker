@@ -163,8 +163,8 @@ docker network
   Three types of network available in docker
 
 |Bridge | Private internal network created by docker, by default containers are attached to this network. |
-|Host   | Host network itself, doesn't off
-|None   |
+|Host   | Host network itself, doesn't offer isolation                                                    |
+|None   | Null                                                                                            |
 
   Bridge is the default network where containers are attached. Containers can be attached to other network using this command.
 
@@ -175,7 +175,7 @@ docker network
 
 Overlay Network
   It is an internal hybrid network which can be created for Docker swarm.
-  ```
+  ```sh
   docker network create --driver overlay --subnet 10.0.9.0/24 my-Overlay
   docker service create --replicas 2 --network my-Overlay nginx
   ```
@@ -209,7 +209,7 @@ Create manager and worker node using virtualbox driver. For other available driv
 ```sh
 docker-machine create --driver virtualbox manager
 docker-machine create --driver virtualbox worker1
-docker-machine create --driver virtualbox Worker2
+docker-machine create --driver virtualbox worker2
 
 docker-machine ls           # List machine
 
