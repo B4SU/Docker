@@ -149,21 +149,23 @@ docker network <command>
 
 ##### Child commands
 
-|Command    | Description                                             |
-|-----------|---------------------------------------------------------|
-|connect    | Connect a container to a network                        |
-|create     | Create a network                                        |
-|disconnect | Disconnect a container from a network                   |
-|inspect    | Display detailed information on one or more networks    |
-|ls         | List networks                                           |
-|prune      | Remove all unused networks                              |
-|rm         | Remove one or more networks                             |
+|Command                   | Description                                             |
+|--------------------------|---------------------------------------------------------|
+|docker network connect    | Connect a container to a network                        |
+|docker network create     | Create a network                                        |
+|docker network disconnect | Disconnect a container from a network                   |
+|docker network inspect    | Display detailed information on one or more networks    |
+|docker network ls         | List networks                                           |
+|docker network prune      | Remove all unused networks                              |
+|docker network rm         | Remove one or more networks                             |
 
 
   Three types of network available in docker
-    1. Bridge
-    2. Host
-    3. None
+
+|Bridge | Private internal network created by docker, by default containers are attached to this network. |
+|Host   | Host network itself, doesn't off
+|None   |
+
   Bridge is the default network where containers are attached. Containers can be attached to other network using this command.
   ```
   docker run ubuntu --network=none
