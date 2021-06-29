@@ -195,98 +195,70 @@ Pre-requisites
 
     ![alt text][logo]
 
-    [logo]: https://docs.docker.com/engine/swarm/images/services-diagram.png "Logo Title Text 2"
+    [logo]: https://docs.docker.com/engine/swarm/images/services-diagram.png "Docker"
 
 
-Create Docker machines (to act as nodes for Docker Swarm). Create one machine as manager and others as workers
+##### Docker Machine
+Docker Machine is a tool to install Docker Engine on virtual hosts, and manage the hosts with docker-machine commands.
 
-```docker
-#Creating manager node, this command is for Mac having dependency on VirtualBox.
-#For Windows replace virtualbox with hyperv.
+Ref: https://docs.docker.com/machine/
 
+
+Create manager and worker node using virtualbox driver. For other available driver details refer https://docs.docker.com/machine/drivers/
+
+```sh
 docker-machine create --driver virtualbox manager
-
-docker-machine ls        # List machine
-
-
-#Creating worker node
-
 docker-machine create --driver virtualbox worker1
+docker-machine create --driver virtualbox Worker2
 
+docker-machine ls           # List machine
 
-#Connect to docker machines via ssh
+docker-machine IP manager   # Obtain IP Address of manager
 
-docker-machine ssh manager
-docker-machine ssh worker1
-docker-machine ssh worker2
+docker-machine ssh manager  # Connect to docker machines via ssh
+```
 
+##### Swarm Initialization
 
-#Obtain IP Address of manager
-docker-machine IP manager
-
-
+```sh
 #Manager Node
-  #Initialize Docker swarm by executing this command in manager node. In this case manager ip address is 192.168.99.100
-  #This will provide a command to add worked in to this swarm
+  docker swarm init --advertise-addr 192.168.99.100   # Command to initialize docker swarm in this case manager node ip address is 192.168.99.100
 
-  docker swarm init --advertise-addr 192.168.99.100
-
-
-
-  #Command to add worker or manager in to the swarm can be obtained by running these commands on manager node.
-
-
-  docker swarm join-token manager
-  docker swarm join-token worker
-  docker node ls        # List available nodes
+  docker swarm join-token manager     # Command to obtain token for adding additional manager node in the swarm
+  docker swarm join-token worker      # Command to obtain token for adding worker node in the swarm
+  docker node ls                      # List swarm nodes
+  docker swarm leave                  # Remove node from the swarm
 
   #Other docker commands
   docker info
   docker swarm
 
-#Worker1 Node
-  #Run command to join this node as worker
-
-#Worker2 Node
-  #Run command to join this node as worker
-
-
-#Remove node out of Swarm
-docker swarm leave
-
 ```  
 
 ##### Run Service in Docker Swarm
 
-```docker
+```sh
 #Manager node
-docker service create --replicas 3 -p 80:80 --name myweb nginx
+  docker service create --replicas 3 -p 80:80 --name myweb nginx    # Creating nginx server named myweb with 3 replicas, accessible at port 80
 
+  docker service update --image nginx:1.14.0 myweb      # Command to update existing service
 
-#Update Service
-docker service update --image nginx:1.14.0 myweb
+  #List service and node information
+  docker service ls
+  docker service ps myweb
 
+  #Scale service up and down
+  docker service scale myweb=4
 
-#List service and node information
-docker service ls
-docker service ps myweb
+  #Inspect docker nodes
+  docker node inspect <nodename>
 
+  #Shutdown specific node
+  docker node update --availability drain worker1
 
-#Scale service up and down
-docker service scale myweb=4
-
-
-#Inspect docker nodes
-docker node inspect <nodename>
-
-
-#Shutdown specific node
-docker node update --availability drain worker1
-
-#Remove service
-docker service rm myweb
-
+  #Remove service
+  docker service rm myweb
 ```
 
 
-#####
+##### Docker Swarm using dockerfile
